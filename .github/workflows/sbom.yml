@@ -14,8 +14,8 @@ jobs:
           curl -sSfL https://raw.githubusercontent.com/anchore/syft/main/install.sh \
           | sh -s -- -b /usr/local/bin v1.37.0
 
-      - name: CycloneDX SBOM (repo)
-        run: syft dir:${{ inputs.target-path }} -o cyclonedx-json > sbom.repo.cdx.json
+      - name: CycloneDX SBOM (repo root)
+        run: syft dir:. -o cyclonedx-json > sbom.repo.cdx.json
 
       - name: Validate CycloneDX
         run: |
