@@ -1,7 +1,7 @@
 name: sbom-checkov-config
 
 on:
-  workflow_call:
+  workflow_dispatch:
 
 jobs:
   sbom:
